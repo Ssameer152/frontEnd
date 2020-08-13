@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST FORM</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="form.css">
+    <script src="./GSTValidation.js" type="text/javascript"></script>
+</head>
+
+<body onload="resetSelection()">
+    <div class="container bgcolor">
+        <h3 class="h3">GST Registration Form</h3>
+        <form action="" onsubmit="zipcodeValidation(zip.value)">
+            <div class="input-group mb-3 mt-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">PAN CARD</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="pancard" aria-describedby="pancard"
+                        onchange="validateFile('pancard')">
+                    <label class="custom-file-label">Choose file</label>
+
+                </div>
+            </div>
+            <div class="input-group mb-3 mt-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">AADHAR CARD</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="aadharcard" onchange="validateFile('aadharcard')">
+                    <label class="custom-file-label">Choose file</label>
+                </div>
+            </div>
+            <div class="input-group mb-3 mt-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Photo(passport size)</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="photo" onchange="validateFile('photo')">
+                    <label class="custom-file-label">Choose file</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">
+                    <h6>Business Address Proof</h6>
+                </label>
+                <br />
+                <label for="inputAddress">Address Line 1</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Address Line 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="state">State</label>
+                    <select id="state" class="form-control" required onchange="validate(this.value)">
+                        <option selected>Choose State..</option>
+                        <option>AndhraPradesh</option>
+                        <option>ArunachalPradesh</option>
+                        <option>Odisha</option>
+                        <option>Maharashtra</option>
+                        <option>Kerala</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">City</label>
+                    <select id="city" class="form-control" required>
+                        <option value="" selected disabled>Choose City</option>
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="zipcode">ZipCode</label>
+                    <input type="text" class="form-control" name="zip" id="zipcode" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Activity">
+                    <h6>Proposed Business Activity : HSN</h6>
+                </label>
+                <input type="text" class="form-control" id="hsncode" placeholder="Enter HSN number" required>
+                corresponding business activity
+            </div>
+            <div class="form-group">
+                <label for="bankDetails">
+                    <h6>Bank Account Details</h6>
+                </label>
+                <br />
+                <label for="accountNumber">Account Number</label>
+                <input type="text" class="form-control" id="acno" required>
+            </div>
+            <div class="form-group">
+                <label for="ifscCode">IFSC Code</label>
+                <input type="text" class="form-control" id="ifsc" required>
+            </div>
+            <div class="form-group">
+                <label for="Bank details">Bank Name</label>
+                <select id="bankName" class="form-control" required>
+                    <option value="" selected disabled>Choose Bank</option>
+                    <option>Bank Of Baroda(BOB)</option>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>Punjab National Bank(PNB)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Branch">Branch</label>
+                <select id="branchName" class="form-control" required>
+                    <option>Civil Lines</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Email">Emailid</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="accountNumber">Mobile Number</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
